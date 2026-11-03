@@ -1,0 +1,18 @@
+digraph ER {
+  graph [rankdir=LR, bgcolor="white", nodesep=0.55, ranksep=1.3, pad=0.3, fontname="Helvetica"];
+  node  [shape=plain, fontname="Helvetica"];
+  edge  [fontname="Helvetica", fontsize=11, dir=both, arrowtail=tee, arrowhead=crow, color="#1E8F7E", penwidth=1.6, labeldistance=2];
+  USERS [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#1E8F7E"><TR><TD BGCOLOR="#1E8F7E"><FONT COLOR="white"><B>USERS</B></FONT></TD></TR><TR><TD ALIGN="LEFT"><U>user_id</U> (PK)</TD></TR><TR><TD ALIGN="LEFT">name</TD></TR><TR><TD ALIGN="LEFT">email (unique)</TD></TR><TR><TD ALIGN="LEFT">password_hash</TD></TR><TR><TD ALIGN="LEFT">phone</TD></TR><TR><TD ALIGN="LEFT">address</TD></TR><TR><TD ALIGN="LEFT">role (customer / seller / rider / admin)</TD></TR><TR><TD ALIGN="LEFT">created_at</TD></TR></TABLE>>];
+  CATEGORIES [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#1E8F7E"><TR><TD BGCOLOR="#1E8F7E"><FONT COLOR="white"><B>CATEGORIES</B></FONT></TD></TR><TR><TD ALIGN="LEFT"><U>category_id</U> (PK)</TD></TR><TR><TD ALIGN="LEFT">name</TD></TR><TR><TD ALIGN="LEFT">description</TD></TR></TABLE>>];
+  PRODUCTS [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#1E8F7E"><TR><TD BGCOLOR="#1E8F7E"><FONT COLOR="white"><B>PRODUCTS</B></FONT></TD></TR><TR><TD ALIGN="LEFT"><U>product_id</U> (PK)</TD></TR><TR><TD ALIGN="LEFT">seller_id (FK)</TD></TR><TR><TD ALIGN="LEFT">category_id (FK)</TD></TR><TR><TD ALIGN="LEFT">name</TD></TR><TR><TD ALIGN="LEFT">type (pet / supply)</TD></TR><TR><TD ALIGN="LEFT">breed, age</TD></TR><TR><TD ALIGN="LEFT">price, stock</TD></TR><TR><TD ALIGN="LEFT">description, image</TD></TR><TR><TD ALIGN="LEFT">status (pending / approved / rejected)</TD></TR></TABLE>>];
+  CART [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#1E8F7E"><TR><TD BGCOLOR="#1E8F7E"><FONT COLOR="white"><B>CART_ITEMS</B></FONT></TD></TR><TR><TD ALIGN="LEFT"><U>cart_item_id</U> (PK)</TD></TR><TR><TD ALIGN="LEFT">user_id (FK)</TD></TR><TR><TD ALIGN="LEFT">product_id (FK)</TD></TR><TR><TD ALIGN="LEFT">quantity</TD></TR></TABLE>>];
+  ORDERS [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#1E8F7E"><TR><TD BGCOLOR="#1E8F7E"><FONT COLOR="white"><B>ORDERS</B></FONT></TD></TR><TR><TD ALIGN="LEFT"><U>order_id</U> (PK)</TD></TR><TR><TD ALIGN="LEFT">customer_id (FK)</TD></TR><TR><TD ALIGN="LEFT">rider_id (FK, nullable)</TD></TR><TR><TD ALIGN="LEFT">delivery_type (home / pickup)</TD></TR><TR><TD ALIGN="LEFT">delivery_address</TD></TR><TR><TD ALIGN="LEFT">total_amount</TD></TR><TR><TD ALIGN="LEFT">status</TD></TR><TR><TD ALIGN="LEFT">created_at</TD></TR></TABLE>>];
+  OITEMS [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" COLOR="#1E8F7E"><TR><TD BGCOLOR="#1E8F7E"><FONT COLOR="white"><B>ORDER_ITEMS</B></FONT></TD></TR><TR><TD ALIGN="LEFT"><U>order_item_id</U> (PK)</TD></TR><TR><TD ALIGN="LEFT">order_id (FK)</TD></TR><TR><TD ALIGN="LEFT">product_id (FK)</TD></TR><TR><TD ALIGN="LEFT">quantity</TD></TR><TR><TD ALIGN="LEFT">unit_price</TD></TR></TABLE>>];
+  USERS -> PRODUCTS [label="sells"];
+  CATEGORIES -> PRODUCTS [label="groups"];
+  USERS -> CART [label="adds to"];
+  PRODUCTS -> CART [label="in"];
+  USERS -> ORDERS [label="places / delivers"];
+  ORDERS -> OITEMS [label="contains"];
+  PRODUCTS -> OITEMS [label="sold as"];
+}
