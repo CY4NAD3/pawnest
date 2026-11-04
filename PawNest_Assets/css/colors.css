@@ -1,0 +1,11 @@
+:root{
+  --bg:#FAF7F2; --card:#FFFFFF; --text:#1F2A44; --muted:#6B7280; --line:#E8E2D6;
+  --teal:#2BB5A0; --teal-dark:#1E8F7E; --teal-light:#DDF3EE;
+  --amber:#FFB347; --amber-light:#FFF1D6; --sky-tile:#E6EEF8;
+  --radius:16px; --font:"Nunito","Calibri","Carlito",Arial,sans-serif;
+}
+[data-theme="dark"]{
+  --bg:#121826; --card:#1B2336; --text:#E8ECF4; --muted:#9AA4B8; --line:#2A3550;
+  --teal:#3CCDB8; --teal-dark:#2BB5A0; --teal-light:#1F3A3A;
+  --amber:#FFB347; --amber-light:#3A2F1A; --sky-tile:#22304A;
+}
