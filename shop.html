@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop | PawNest</title>
+
+  <!-- Favicons -->
+  <link rel="icon" href="PawNest_Assets/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="PawNest_Assets/favicon/favicon.ico" sizes="any">
+  <link rel="icon" href="PawNest_Assets/favicon/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="PawNest_Assets/favicon/favicon-180.png">
+
+  <!-- Styles: shared colour variables first, then this page -->
+  <link rel="stylesheet" href="PawNest_Assets/css/colors.css">
+  <link rel="stylesheet" href="css/shop.css">
+  <script src="js/shop.js" defer></script>
+</head>
+<body>
+
+  <!-- ================= HEADER / NAVBAR ================= -->
+  <header class="site-header">
+    <a href="index.html" class="logo">
+      <img class="logo__img" src="PawNest_Assets/logo/logo-horizontal.svg" alt="PawNest" height="32">
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul class="main-nav__list">
+        <li><a href="index.html" class="main-nav__link">Home</a></li>
+        <li><a href="shop.html" class="main-nav__link main-nav__link--active" aria-current="page">Shop</a></li>
+        <li><a href="dogs.html" class="main-nav__link">Dogs</a></li>
+        <li><a href="cats.html" class="main-nav__link">Cats</a></li>
+        <li><a href="supplies.html" class="main-nav__link">Supplies</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <form class="search-box" id="search-form" role="search">
+        <label for="search-input" class="visually-hidden">Search pets and supplies</label>
+        <input type="search" id="search-input" class="search-box__input" placeholder="Search pets and supplies">
+      </form>
+
+      <a href="cart.html" class="cart-btn" aria-label="Cart, 2 items">
+        <svg class="cart-btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 4h2l2.4 11h10.2L20 7H6.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="9" cy="19" r="1.6" fill="currentColor"/>
+          <circle cx="17" cy="19" r="1.6" fill="currentColor"/>
+        </svg>
+        <span class="cart-btn__badge" id="cart-count">2</span>
+      </a>
+
+      <a href="login.html" class="btn btn--outline btn--pill">Login</a>
+    </div>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main class="shop-layout">
+
+    <!-- ---------- Filters sidebar ---------- -->
+    <aside class="filters" aria-label="Filters">
+      <form id="filter-form">
+        <h2 class="filters__title">Filters</h2>
+
+        <fieldset class="filter-group">
+          <legend class="filter-group__label">Category</legend>
+          <label class="radio"><input type="radio" name="category" value="all"><span class="radio__label">All</span></label>
+          <label class="radio"><input type="radio" name="category" value="dogs" checked><span class="radio__label">Dogs</span></label>
+          <label class="radio"><input type="radio" name="category" value="cats"><span class="radio__label">Cats</span></label>
+          <label class="radio"><input type="radio" name="category" value="food"><span class="radio__label">Food</span></label>
+          <label class="radio"><input type="radio" name="category" value="accessories"><span class="radio__label">Accessories</span></label>
+        </fieldset>
+
+        <fieldset class="filter-group">
+          <legend class="filter-group__label">Price</legend>
+          <div class="price-range">
+            <label class="visually-hidden" for="price-min">Minimum price</label>
+            <input type="range" id="price-min" name="price-min" min="0" max="50000" step="500" value="2000">
+            <label class="visually-hidden" for="price-max">Maximum price</label>
+            <input type="range" id="price-max" name="price-max" min="0" max="50000" step="500" value="30000">
+          </div>
+          <p class="price-range__text">
+            Tk <span id="price-min-value">2,000</span> – Tk <span id="price-max-value">30,000</span>
+          </p>
+        </fieldset>
+
+        <fieldset class="filter-group">
+          <legend class="filter-group__label">Age</legend>
+          <div class="chip-group">
+            <label class="chip">
+              <input type="radio" name="age" value="young" checked>
+              <span class="chip__label">Puppy/Kitten</span>
+            </label>
+            <label class="chip">
+              <input type="radio" name="age" value="adult">
+              <span class="chip__label">Adult</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="btn btn--primary btn--pill btn--block filters__apply">Apply filters</button>
+      </form>
+    </aside>
+
+    <!-- ---------- Results ---------- -->
+    <section class="results" aria-labelledby="results-title">
+      <div class="results__header">
+        <div class="results__heading">
+          <h1 class="results__title" id="results-title">Dogs</h1>
+          <p class="results__count"><span id="results-count">24</span> pets found</p>
+        </div>
+
+        <div class="sort">
+          <label for="sort-select" class="visually-hidden">Sort by</label>
+          <select id="sort-select" class="sort__select" name="sort">
+            <option value="price-asc" selected>Sort: Price low to high</option>
+            <option value="price-desc">Sort: Price high to low</option>
+            <option value="name-asc">Sort: Name A to Z</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="product-grid" id="product-grid">
+
+        <article class="product-card" data-name="Golden Pup" data-price="25000">
+          <div class="product-card__media product-card__media--cream">
+            <img class="product-card__art" src="PawNest_Assets/mascots/dog-golden.svg" alt="Golden Retriever" width="120" height="120" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Golden Pup</h3>
+            <p class="product-card__meta">Golden Retriever · 3 mo</p>
+            <div class="product-card__footer">
+              <span class="product-card__price">Tk 25,000</span>
+              <button type="button" class="btn btn--primary btn--pill btn--sm add-to-cart">Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Snowy" data-price="30000">
+          <div class="product-card__media product-card__media--mint">
+            <img class="product-card__art" src="PawNest_Assets/mascots/dog-white.svg" alt="Samoyed" width="120" height="120" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Snowy</h3>
+            <p class="product-card__meta">Samoyed · 2 mo</p>
+            <div class="product-card__footer">
+              <span class="product-card__price">Tk 30,000</span>
+              <button type="button" class="btn btn--primary btn--pill btn--sm add-to-cart">Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Rocky" data-price="15000">
+          <div class="product-card__media product-card__media--blue">
+            <img class="product-card__art" src="PawNest_Assets/mascots/dog-golden.svg" alt="Labrador" width="120" height="120" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Rocky</h3>
+            <p class="product-card__meta">Labrador · 4 mo</p>
+            <div class="product-card__footer">
+              <span class="product-card__price">Tk 15,000</span>
+              <button type="button" class="btn btn--primary btn--pill btn--sm add-to-cart">Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Bella" data-price="22000">
+          <div class="product-card__media product-card__media--cream">
+            <img class="product-card__art" src="PawNest_Assets/mascots/dog-white.svg" alt="Husky" width="120" height="120" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Bella</h3>
+            <p class="product-card__meta">Husky · 3 mo</p>
+            <div class="product-card__footer">
+              <span class="product-card__price">Tk 22,000</span>
+              <button type="button" class="btn btn--primary btn--pill btn--sm add-to-cart">Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Coco" data-price="12000">
+          <div class="product-card__media product-card__media--mint">
+            <img class="product-card__art" src="PawNest_Assets/mascots/dog-golden.svg" alt="Beagle" width="120" height="120" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Coco</h3>
+            <p class="product-card__meta">Beagle · 5 mo</p>
+            <div class="product-card__footer">
+              <span class="product-card__price">Tk 12,000</span>
+              <button type="button" class="btn btn--primary btn--pill btn--sm add-to-cart">Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="Max" data-price="14500">
+          <div class="product-card__media product-card__media--blue">
+            <img class="product-card__art" src="PawNest_Assets/mascots/dog-white.svg" alt="Pug" width="120" height="120" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Max</h3>
+            <p class="product-card__meta">Pug · 2 mo</p>
+            <div class="product-card__footer">
+              <span class="product-card__price">Tk 14,500</span>
+              <button type="button" class="btn btn--primary btn--pill btn--sm add-to-cart">Add</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <nav class="pagination" aria-label="Pagination">
+        <a href="#" class="pagination__link pagination__link--active" aria-current="page">1</a>
+        <a href="#" class="pagination__link">2</a>
+        <a href="#" class="pagination__link">3</a>
+      </nav>
+    </section>
+
+  </main>
+
+</body>
+</html>
