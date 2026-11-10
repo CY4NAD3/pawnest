@@ -1,36 +1,21 @@
 /* =========================================================
-   PawNest – Shop page styles
-   Load order in shop.html: PawNest_Assets/css/colors.css, then this file.
-   The tokens below are taken from the design. If colors.css already
-   defines the same colours, point these variables at its names
-   (e.g. --teal: var(--your-teal-name);) and everything updates.
-   ========================================================= */
+ *  PawNest – Shop page styles
+ *  Colours, font and dark theme come from PawNest_Assets/css/colors.css
+ *  (loaded before this file in shop.html). Only values that don't exist
+ *  there are defined below.
+ *  ========================================================= */
 
 :root {
-  /* colours */
-  --teal: #2BB5A0;
-  --teal-dark: #1E8F7E;
-  --teal-tint: #DDF3EE;
-  --navy: #1F2A44;
-  --grey-text: #6B7280;
-  --grey-placeholder: #9CA3AF;
-  --border: #E8E2D6;
   --border-input: #CBD5E1;
-  --page-bg: #FAF7F2;
-  --white: #fff;
-  --orange: #FFB347;
-
-  /* card backdrops */
-  --media-cream: #FFF1D6;
-  --media-mint: #E9F6F3;
-  --media-blue: #E6EEF8;
-
+  --grey-placeholder: #9CA3AF;
   --gradient-btn: linear-gradient(135deg, var(--teal), var(--teal-dark));
-
-  /* shape + type */
   --radius-card: 14px;
   --radius-media: 12px;
-  --font: Calibri, Carlito, "Segoe UI", Arial, sans-serif;
+}
+
+[data-theme="dark"] {
+  --border-input: #3A4766;
+  --grey-placeholder: #6F7A92;
 }
 
 /* ---------- Base ---------- */
@@ -44,8 +29,8 @@ body {
   margin: 0;
   font-family: var(--font);
   font-size: 1rem;
-  color: var(--navy);
-  background: var(--page-bg);
+  color: var(--text);
+  background: var(--bg);
   line-height: 1.4;
 }
 
@@ -90,7 +75,7 @@ button, input, select { font: inherit; }
 
 .btn--primary {
   background: var(--gradient-btn);
-  color: var(--white);
+  color: #fff;
 }
 
 .btn--primary:hover {
@@ -99,12 +84,12 @@ button, input, select { font: inherit; }
 }
 
 .btn--outline {
-  background: var(--white);
+  background: var(--card);
   color: var(--teal-dark);
   border-color: var(--teal);
 }
 
-.btn--outline:hover { background: var(--teal-tint); }
+.btn--outline:hover { background: var(--teal-light); }
 
 .btn--sm {
   height: 32px;
@@ -130,8 +115,8 @@ select:focus-visible {
   gap: 2rem;
   height: 76px;
   padding: 0 52px;
-  background: var(--white);
-  border-bottom: 1px solid var(--border);
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -174,7 +159,7 @@ select:focus-visible {
 .search-box {
   width: 300px;
   height: 38px;
-  background: var(--page-bg);
+  background: var(--bg);
   border-radius: 19px;
 }
 
@@ -186,7 +171,7 @@ select:focus-visible {
   border-radius: inherit;
   background: transparent;
   font-size: 0.8125rem;
-  color: var(--navy);
+  color: var(--text);
 }
 
 .search-box__input::placeholder { color: var(--grey-placeholder); }
@@ -204,7 +189,7 @@ select:focus-visible {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--teal-tint);
+  background: var(--teal-light);
   color: var(--teal-dark);
 }
 
@@ -223,8 +208,8 @@ select:focus-visible {
   display: grid;
   place-items: center;
   border-radius: 9px;
-  background: var(--orange);
-  color: var(--navy);
+  background: var(--amber);
+  color: var(--text);
   font-size: 0.6875rem;
   font-weight: 800;
 }
@@ -247,8 +232,8 @@ select:focus-visible {
 
 /* ---------- Filters sidebar ---------- */
 .filters {
-  background: var(--white);
-  border: 1px solid var(--border);
+  background: var(--card);
+  border: 1px solid var(--line);
   border-radius: var(--radius-card);
   padding: 24px;
   position: sticky;
@@ -272,7 +257,7 @@ select:focus-visible {
   margin-bottom: 0.6rem;
   font-size: 0.8125rem;
   font-weight: 700;
-  color: var(--grey-text);
+  color: var(--muted);
 }
 
 /* custom radios */
@@ -302,12 +287,12 @@ select:focus-visible {
   flex-shrink: 0;
   border-radius: 50%;
   border: 2px solid var(--border-input);
-  background: var(--white);
+  background: var(--card);
   transition: border-color 0.15s ease;
 }
 
 .radio input:checked + .radio__label::before {
-  background: radial-gradient(circle, var(--teal) 0 4.5px, var(--white) 5px);
+  background: radial-gradient(circle, var(--teal) 0 4.5px, var(--card) 5px);
 }
 
 .radio:hover .radio__label::before { border-color: var(--teal); }
@@ -318,7 +303,7 @@ select:focus-visible {
 }
 
 /* dual price slider
-   JS can update --range-start / --range-end (percentages) to move the fill */
+ *  JS can update --range-start / --range-end (percentages) to move the fill */
 .price-range {
   --range-start: 4%;
   --range-end: 60%;
@@ -336,10 +321,10 @@ select:focus-visible {
   border-radius: 4px;
   background: linear-gradient(
     to right,
-    var(--border) var(--range-start),
-    var(--teal) var(--range-start),
-    var(--teal) var(--range-end),
-    var(--border) var(--range-end)
+    var(--line) var(--range-start),
+                              var(--teal) var(--range-start),
+                              var(--teal) var(--range-end),
+                              var(--line) var(--range-end)
   );
 }
 
@@ -372,7 +357,7 @@ select:focus-visible {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: var(--white);
+  background: var(--card);
   border: 2px solid var(--teal);
   box-shadow: 0 1px 4px rgba(31, 42, 68, 0.2);
   cursor: pointer;
@@ -383,7 +368,7 @@ select:focus-visible {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: var(--white);
+  background: var(--card);
   border: 2px solid var(--teal);
   box-shadow: 0 1px 4px rgba(31, 42, 68, 0.2);
   cursor: pointer;
@@ -415,7 +400,7 @@ select:focus-visible {
   padding: 0 14px;
   line-height: 26px;
   border-radius: 13px;
-  background: var(--teal-tint);
+  background: var(--teal-light);
   color: var(--teal-dark);
   font-size: 0.75rem;
   font-weight: 600;
@@ -424,7 +409,7 @@ select:focus-visible {
 
 .chip input:checked + .chip__label {
   background: var(--teal);
-  color: var(--white);
+  color: #fff;
 }
 
 .chip input:focus-visible + .chip__label {
@@ -452,7 +437,7 @@ select:focus-visible {
 .results__count {
   margin-top: 0.3rem;
   font-size: 0.875rem;
-  color: var(--grey-text);
+  color: var(--muted);
 }
 
 .sort__select {
@@ -461,13 +446,13 @@ select:focus-visible {
   padding: 0 44px 0 20px;
   border: 1px solid var(--border-input);
   border-radius: 20px;
-  background-color: var(--white);
+  background-color: var(--card);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231F2A44' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 18px center;
   font-size: 0.8125rem;
   font-weight: 600;
-  color: var(--navy);
+  color: var(--text);
   cursor: pointer;
   -webkit-appearance: none;
   appearance: none;
@@ -481,8 +466,8 @@ select:focus-visible {
 }
 
 .product-card {
-  background: var(--white);
-  border: 1px solid var(--border);
+  background: var(--card);
+  border: 1px solid var(--line);
   border-radius: var(--radius-card);
   padding: 10px 10px 16px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -498,12 +483,12 @@ select:focus-visible {
   place-items: center;
   height: 130px;
   border-radius: var(--radius-media);
-  background: var(--media-cream);
+  background: var(--amber-light);
 }
 
-.product-card__media--cream { background: var(--media-cream); }
-.product-card__media--mint  { background: var(--media-mint); }
-.product-card__media--blue  { background: var(--media-blue); }
+.product-card__media--cream { background: var(--amber-light); }
+.product-card__media--mint  { background: var(--teal-light); }
+.product-card__media--blue  { background: var(--sky-tile); }
 
 .product-card__art {
   height: 100px;
@@ -521,7 +506,7 @@ select:focus-visible {
 .product-card__meta {
   margin-top: 0.1rem;
   font-size: 0.8125rem;
-  color: var(--grey-text);
+  color: var(--muted);
 }
 
 .product-card__footer {
@@ -550,8 +535,8 @@ select:focus-visible {
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  border: 1px solid var(--border);
-  background: var(--white);
+  border: 1px solid var(--line);
+  background: var(--card);
   font-size: 0.875rem;
   font-weight: 700;
   transition: border-color 0.15s ease, color 0.15s ease;
@@ -565,10 +550,10 @@ select:focus-visible {
 .pagination__link--active {
   background: var(--teal);
   border-color: var(--teal);
-  color: var(--white);
+  color: #fff;
 }
 
-.pagination__link--active:hover { color: var(--white); }
+.pagination__link--active:hover { color: #fff; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1100px) {
