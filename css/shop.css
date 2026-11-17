@@ -267,6 +267,7 @@ main {
   border-radius: 10px;
   background: var(--card);
   font-weight: bold;
+  cursor: pointer;
 }
 
 .pagination a.active {

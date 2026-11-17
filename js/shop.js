@@ -11,6 +11,7 @@ const maxText    = document.getElementById('max-text');
 const applyBtn   = document.getElementById('apply-btn');
 const sortSelect = document.getElementById('sort');
 const grid       = document.getElementById('grid');
+const pagination = document.getElementById('pagination');
 const title      = document.getElementById('title');
 const count      = document.getElementById('count');
 
@@ -21,6 +22,9 @@ const cards      = document.querySelectorAll('.card');
 // ---------- Variables that remember things ----------
 let selectedAge = 'young';
 let cartItems = 0;
+let currentPage = 1;
+let matching = [];          // the cards that pass the filters, in the order shown
+const perPage = 9;          // cards on one page (3 full rows of 3)
 
 
 // ---------- 1. Price sliders ----------
@@ -70,16 +74,25 @@ for (let i = 0; i < ageButtons.length; i++) {
 
 // ---------- 3. Filter the cards ----------
 function filterCards() {
-  const category = document.querySelector('input[name="category"]:checked').value;
+  // find the ticked category radio (only Shop and Supplies have them)
+  let category = 'All';
+  const ticked = document.querySelector('input[name="category"]:checked');
+  if (ticked) {
+    category = ticked.value;
+  }
   const min = Number(minPrice.value);
   const max = Number(maxPrice.value);
   const search = searchBox.value.toLowerCase();
 
-  let shown = 0;
+  // start with an empty list of matching cards
+  matching = [];
+
+  // look at the cards in the order they are on the page right now
+  const cardList = grid.querySelectorAll('.card');
 
   // check every card one by one
-  for (let i = 0; i < cards.length; i++) {
-    const card = cards[i];
+  for (let i = 0; i < cardList.length; i++) {
+    const card = cardList[i];
     const price = Number(card.dataset.price);
     let show = true;
 
@@ -89,7 +102,8 @@ function filterCards() {
     if (category !== 'All' && card.dataset.category !== category) {
       show = false;
     }
-    if (card.dataset.age !== selectedAge) {
+    // supplies have no data-age, so only pets are checked by age
+    if (card.dataset.age && card.dataset.age !== selectedAge) {
       show = false;
     }
     // (textContent is kept here: it reads only the words on the card)
@@ -97,24 +111,67 @@ function filterCards() {
       show = false;
     }
 
-    // show or hide the card
+    // remember the cards that passed
     if (show) {
-      card.style.display = '';
-      shown++;
-    } else {
-      card.style.display = 'none';
+      matching.push(card);
     }
   }
 
-  title.innerHTML = category;
-  count.innerHTML = shown;
+  // Dogs, Cats and Supplies keep their own heading (data-fixed="yes")
+  if (title.dataset.fixed !== 'yes') {
+    if (category === 'All') {
+      title.innerHTML = 'Shop';
+    } else {
+      title.innerHTML = category;
+    }
+  }
+  count.innerHTML = matching.length;
+
+  // always go back to page 1 after filtering
+  currentPage = 1;
+  showPage();
 }
 
 applyBtn.addEventListener('click', filterCards);
 searchBox.addEventListener('input', filterCards);
 
 
-// ---------- 4. Sort the cards ----------
+// ---------- 4. Pages (9 cards on each page) ----------
+// Shows only the cards of the current page and builds the page numbers
+function showPage() {
+  const start = (currentPage - 1) * perPage;
+  const end = start + perPage;
+
+  // hide every card first
+  const cardList = grid.querySelectorAll('.card');
+  for (let i = 0; i < cardList.length; i++) {
+    cardList[i].style.display = 'none';
+  }
+
+  // show only the matching cards that belong to this page
+  for (let i = start; i < end && i < matching.length; i++) {
+    matching[i].style.display = '';
+  }
+
+  // build the page numbers: 1, 2, 3 ...
+  const totalPages = Math.ceil(matching.length / perPage);
+  pagination.innerHTML = '';
+  for (let i = 1; i <= totalPages; i++) {
+    const link = document.createElement('a');
+    link.innerHTML = i;
+    if (i === currentPage) {
+      link.classList.add('active');
+    }
+    link.addEventListener('click', function () {
+      currentPage = i;
+      showPage();
+    });
+    pagination.appendChild(link);
+  }
+}
+
+
+// ---------- 5. Sort the cards ----------
 function sortCards() {
   const list = Array.from(cards);   // turn the cards into a normal list
   const choice = sortSelect.value;
@@ -133,12 +190,24 @@ function sortCards() {
   for (let i = 0; i < list.length; i++) {
     grid.appendChild(list[i]);
   }
+
+  // keep the matching cards in the new order and go back to page 1
+  const ordered = [];
+  const cardList = grid.querySelectorAll('.card');
+  for (let i = 0; i < cardList.length; i++) {
+    if (matching.includes(cardList[i])) {
+      ordered.push(cardList[i]);
+    }
+  }
+  matching = ordered;
+  currentPage = 1;
+  showPage();
 }
 
 sortSelect.addEventListener('change', sortCards);
 
 
-// ---------- 5. Add to cart ----------
+// ---------- 6. Add to cart ----------
 for (let i = 0; i < addButtons.length; i++) {
   addButtons[i].addEventListener('click', function () {
     cartItems++;
@@ -148,7 +217,7 @@ for (let i = 0; i < addButtons.length; i++) {
 }
 
 
-// ---------- 6. Run once when the page opens ----------
+// ---------- 7. Run once when the page opens ----------
 showPrices();
-sortCards();
 filterCards();
+sortCards();

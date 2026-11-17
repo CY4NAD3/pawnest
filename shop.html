@@ -41,15 +41,15 @@
       <h2>Filters</h2>
 
       <h3>Category</h3>
-      <label><input type="radio" name="category" value="All"> All</label>
-      <label><input type="radio" name="category" value="Dogs" checked> Dogs</label>
+      <label><input type="radio" name="category" value="All" checked> All</label>
+      <label><input type="radio" name="category" value="Dogs"> Dogs</label>
       <label><input type="radio" name="category" value="Cats"> Cats</label>
       <label><input type="radio" name="category" value="Food"> Food</label>
       <label><input type="radio" name="category" value="Accessories"> Accessories</label>
 
       <h3>Price</h3>
-      <label>Min: Tk <span id="min-text">2,000</span></label>
-      <input type="range" id="min-price" min="0" max="50000" step="500" value="2000">
+      <label>Min: Tk <span id="min-text">0</span></label>
+      <input type="range" id="min-price" min="0" max="50000" step="500" value="0">
       <label>Max: Tk <span id="max-text">30,000</span></label>
       <input type="range" id="max-price" min="0" max="50000" step="500" value="30000">
 
@@ -65,7 +65,7 @@
 
       <div class="results-top">
         <div>
-          <h1 id="title">Dogs</h1>
+          <h1 id="title">Shop</h1>
           <p><span id="count">6</span> pets found</p>
         </div>
 
@@ -78,6 +78,7 @@
 
       <div class="grid" id="grid">
 
+        <!-- ===== Dogs ===== -->
         <div class="card" data-name="Golden Pup" data-price="25000" data-category="Dogs" data-age="young">
           <div class="card-image cream">
             <img src="PawNest_Assets/mascots/dog-golden.svg" alt="Golden Retriever">
@@ -150,13 +151,228 @@
           </div>
         </div>
 
+        <div class="card" data-name="Buddy" data-price="18000" data-category="Dogs" data-age="adult">
+          <div class="card-image cream">
+            <img src="PawNest_Assets/mascots/dog-golden.svg" alt="Labrador">
+          </div>
+          <h3>Buddy</h3>
+          <p>Labrador · 3 yr</p>
+          <div class="card-bottom">
+            <span class="price">Tk 18,000</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Duke" data-price="20000" data-category="Dogs" data-age="adult">
+          <div class="card-image mint">
+            <img src="PawNest_Assets/mascots/dog-white.svg" alt="German Shepherd">
+          </div>
+          <h3>Duke</h3>
+          <p>German Shepherd · 4 yr</p>
+          <div class="card-bottom">
+            <span class="price">Tk 20,000</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Daisy" data-price="9000" data-category="Dogs" data-age="adult">
+          <div class="card-image blue">
+            <img src="PawNest_Assets/mascots/dog-golden.svg" alt="Beagle">
+          </div>
+          <h3>Daisy</h3>
+          <p>Beagle · 2 yr</p>
+          <div class="card-bottom">
+            <span class="price">Tk 9,000</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <!-- ===== Cats ===== -->
+        <div class="card" data-name="Misty" data-price="18000" data-category="Cats" data-age="young">
+          <div class="card-image cream">
+            <img src="PawNest_Assets/mascots/cat-grey.svg" alt="Persian cat">
+          </div>
+          <h3>Misty</h3>
+          <p>Persian cat · 4 mo</p>
+          <div class="card-bottom">
+            <span class="price">Tk 18,000</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Ginger" data-price="9000" data-category="Cats" data-age="young">
+          <div class="card-image mint">
+            <img src="PawNest_Assets/mascots/cat-orange.svg" alt="Tabby cat">
+          </div>
+          <h3>Ginger</h3>
+          <p>Tabby cat · 5 mo</p>
+          <div class="card-bottom">
+            <span class="price">Tk 9,000</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Luna" data-price="15000" data-category="Cats" data-age="young">
+          <div class="card-image blue">
+            <img src="PawNest_Assets/mascots/cat-grey.svg" alt="Siamese cat">
+          </div>
+          <h3>Luna</h3>
+          <p>Siamese · 3 mo</p>
+          <div class="card-bottom">
+            <span class="price">Tk 15,000</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Oreo" data-price="20000" data-category="Cats" data-age="young">
+          <div class="card-image cream">
+            <img src="PawNest_Assets/mascots/cat-grey.svg" alt="British Shorthair">
+          </div>
+          <h3>Oreo</h3>
+          <p>British Shorthair · 4 mo</p>
+          <div class="card-bottom">
+            <span class="price">Tk 20,000</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Tiger" data-price="25000" data-category="Cats" data-age="young">
+          <div class="card-image mint">
+            <img src="PawNest_Assets/mascots/cat-orange.svg" alt="Bengal cat">
+          </div>
+          <h3>Tiger</h3>
+          <p>Bengal · 6 mo</p>
+          <div class="card-bottom">
+            <span class="price">Tk 25,000</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Simba" data-price="12000" data-category="Cats" data-age="young">
+          <div class="card-image blue">
+            <img src="PawNest_Assets/mascots/cat-orange.svg" alt="Tabby cat">
+          </div>
+          <h3>Simba</h3>
+          <p>Tabby cat · 3 mo</p>
+          <div class="card-bottom">
+            <span class="price">Tk 12,000</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Shadow" data-price="12000" data-category="Cats" data-age="adult">
+          <div class="card-image cream">
+            <img src="PawNest_Assets/mascots/cat-grey.svg" alt="Russian Blue">
+          </div>
+          <h3>Shadow</h3>
+          <p>Russian Blue · 2 yr</p>
+          <div class="card-bottom">
+            <span class="price">Tk 12,000</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Mimi" data-price="10000" data-category="Cats" data-age="adult">
+          <div class="card-image mint">
+            <img src="PawNest_Assets/mascots/cat-grey.svg" alt="Persian cat">
+          </div>
+          <h3>Mimi</h3>
+          <p>Persian cat · 3 yr</p>
+          <div class="card-bottom">
+            <span class="price">Tk 10,000</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Leo" data-price="28000" data-category="Cats" data-age="adult">
+          <div class="card-image blue">
+            <img src="PawNest_Assets/mascots/cat-orange.svg" alt="Maine Coon">
+          </div>
+          <h3>Leo</h3>
+          <p>Maine Coon · 2 yr</p>
+          <div class="card-bottom">
+            <span class="price">Tk 28,000</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <!-- ===== Supplies (Food and Accessories) ===== -->
+        <div class="card" data-name="Premium Dog Food 5kg" data-price="2400" data-category="Food">
+          <div class="card-image cream">
+            <img src="PawNest_Assets/products/dog-food-bag.svg" alt="Dog food bag">
+          </div>
+          <h3>Premium Dog Food 5kg</h3>
+          <p>Chicken &amp; rice</p>
+          <div class="card-bottom">
+            <span class="price">Tk 2,400</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Cat Food 2kg" data-price="1500" data-category="Food">
+          <div class="card-image mint">
+            <img src="PawNest_Assets/products/dog-food-bag.svg" alt="Cat food bag">
+          </div>
+          <h3>Cat Food 2kg</h3>
+          <p>Tuna flavour</p>
+          <div class="card-bottom">
+            <span class="price">Tk 1,500</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Puppy Food 1kg" data-price="900" data-category="Food">
+          <div class="card-image blue">
+            <img src="PawNest_Assets/products/dog-food-bag.svg" alt="Puppy food bag">
+          </div>
+          <h3>Puppy Food 1kg</h3>
+          <p>Milk &amp; chicken</p>
+          <div class="card-bottom">
+            <span class="price">Tk 900</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Chew Ball Set" data-price="450" data-category="Accessories">
+          <div class="card-image cream">
+            <img src="PawNest_Assets/products/toy-ball.svg" alt="Chew balls">
+          </div>
+          <h3>Chew Ball Set</h3>
+          <p>Pack of 3</p>
+          <div class="card-bottom">
+            <span class="price">Tk 450</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Cat Tree" data-price="6500" data-category="Accessories">
+          <div class="card-image mint">
+            <img src="PawNest_Assets/products/toy-ball.svg" alt="Cat tree">
+          </div>
+          <h3>Cat Tree</h3>
+          <p>Two levels</p>
+          <div class="card-bottom">
+            <span class="price">Tk 6,500</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Rubber Toy Ball" data-price="300" data-category="Accessories">
+          <div class="card-image blue">
+            <img src="PawNest_Assets/products/toy-ball.svg" alt="Rubber ball">
+          </div>
+          <h3>Rubber Toy Ball</h3>
+          <p>Bouncy, for dogs</p>
+          <div class="card-bottom">
+            <span class="price">Tk 300</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
       </div>
 
-      <div class="pagination">
-        <a href="#" class="active">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-      </div>
+      <!-- page numbers are made by shop.js -->
+      <div class="pagination" id="pagination"></div>
 
     </section>
   </main>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supplies | PawNest</title>
+
+  <link rel="icon" href="PawNest_Assets/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/colors.css">
+  <link rel="stylesheet" href="css/shop.css">
+  <script src="js/shop.js" defer></script>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <a href="index.html">
+      <img src="PawNest_Assets/logo/logo-horizontal.svg" alt="PawNest" class="logo">
+    </a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="dogs.html">Dogs</a>
+      <a href="cats.html">Cats</a>
+      <a href="supplies.html" class="active">Supplies</a>
+    </nav>
+
+    <div class="header-right">
+      <input type="text" id="search" placeholder="Search pets and supplies">
+      <a href="cart.html" class="cart">🛒<span id="cart-count">0</span></a>
+      <a href="login.html" class="login-btn">Login</a>
+    </div>
+  </header>
+
+  <!-- ===== Main ===== -->
+  <main>
+
+    <!-- Filters (left side) -->
+    <aside class="filters">
+      <h2>Filters</h2>
+
+      <h3>Category</h3>
+      <label><input type="radio" name="category" value="All" checked> All</label>
+      <label><input type="radio" name="category" value="Food"> Food</label>
+      <label><input type="radio" name="category" value="Accessories"> Accessories</label>
+
+      <h3>Price</h3>
+      <label>Min: Tk <span id="min-text">0</span></label>
+      <input type="range" id="min-price" min="0" max="10000" step="100" value="0">
+      <label>Max: Tk <span id="max-text">10,000</span></label>
+      <input type="range" id="max-price" min="0" max="10000" step="100" value="10000">
+
+      <button id="apply-btn">Apply filters</button>
+    </aside>
+
+    <!-- Results (right side) -->
+    <section class="results">
+
+      <div class="results-top">
+        <div>
+          <h1 id="title" data-fixed="yes">Supplies</h1>
+          <p><span id="count">6</span> items found</p>
+        </div>
+
+        <select id="sort">
+          <option value="price-low">Sort: Price low to high</option>
+          <option value="price-high">Sort: Price high to low</option>
+          <option value="name">Sort: Name A to Z</option>
+        </select>
+      </div>
+
+      <div class="grid" id="grid">
+
+        <div class="card" data-name="Premium Dog Food 5kg" data-price="2400" data-category="Food">
+          <div class="card-image cream">
+            <img src="PawNest_Assets/products/dog-food-bag.svg" alt="Dog food bag">
+          </div>
+          <h3>Premium Dog Food 5kg</h3>
+          <p>Chicken &amp; rice</p>
+          <div class="card-bottom">
+            <span class="price">Tk 2,400</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Cat Food 2kg" data-price="1500" data-category="Food">
+          <div class="card-image mint">
+            <img src="PawNest_Assets/products/dog-food-bag.svg" alt="Cat food bag">
+          </div>
+          <h3>Cat Food 2kg</h3>
+          <p>Tuna flavour</p>
+          <div class="card-bottom">
+            <span class="price">Tk 1,500</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Puppy Food 1kg" data-price="900" data-category="Food">
+          <div class="card-image blue">
+            <img src="PawNest_Assets/products/dog-food-bag.svg" alt="Puppy food bag">
+          </div>
+          <h3>Puppy Food 1kg</h3>
+          <p>Milk &amp; chicken</p>
+          <div class="card-bottom">
+            <span class="price">Tk 900</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Chew Ball Set" data-price="450" data-category="Accessories">
+          <div class="card-image cream">
+            <img src="PawNest_Assets/products/toy-ball.svg" alt="Chew balls">
+          </div>
+          <h3>Chew Ball Set</h3>
+          <p>Pack of 3</p>
+          <div class="card-bottom">
+            <span class="price">Tk 450</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Cat Tree" data-price="6500" data-category="Accessories">
+          <div class="card-image mint">
+            <img src="PawNest_Assets/products/toy-ball.svg" alt="Cat tree">
+          </div>
+          <h3>Cat Tree</h3>
+          <p>Two levels</p>
+          <div class="card-bottom">
+            <span class="price">Tk 6,500</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Rubber Toy Ball" data-price="300" data-category="Accessories">
+          <div class="card-image blue">
+            <img src="PawNest_Assets/products/toy-ball.svg" alt="Rubber ball">
+          </div>
+          <h3>Rubber Toy Ball</h3>
+          <p>Bouncy, for dogs</p>
+          <div class="card-bottom">
+            <span class="price">Tk 300</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- page numbers are made by shop.js -->
+      <div class="pagination" id="pagination"></div>
+
+    </section>
+  </main>
+
+</body>
+</html>

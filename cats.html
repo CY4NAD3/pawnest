@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cats | PawNest</title>
+
+  <link rel="icon" href="PawNest_Assets/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/colors.css">
+  <link rel="stylesheet" href="css/shop.css">
+  <script src="js/shop.js" defer></script>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <a href="index.html">
+      <img src="PawNest_Assets/logo/logo-horizontal.svg" alt="PawNest" class="logo">
+    </a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="dogs.html">Dogs</a>
+      <a href="cats.html" class="active">Cats</a>
+      <a href="supplies.html">Supplies</a>
+    </nav>
+
+    <div class="header-right">
+      <input type="text" id="search" placeholder="Search pets and supplies">
+      <a href="cart.html" class="cart">🛒<span id="cart-count">0</span></a>
+      <a href="login.html" class="login-btn">Login</a>
+    </div>
+  </header>
+
+  <!-- ===== Main ===== -->
+  <main>
+
+    <!-- Filters (left side) -->
+    <aside class="filters">
+      <h2>Filters</h2>
+
+      <h3>Price</h3>
+      <label>Min: Tk <span id="min-text">2,000</span></label>
+      <input type="range" id="min-price" min="0" max="50000" step="500" value="2000">
+      <label>Max: Tk <span id="max-text">30,000</span></label>
+      <input type="range" id="max-price" min="0" max="50000" step="500" value="30000">
+
+      <h3>Age</h3>
+      <button class="age-btn active" data-age="young">Kitten</button>
+      <button class="age-btn" data-age="adult">Adult</button>
+
+      <button id="apply-btn">Apply filters</button>
+    </aside>
+
+    <!-- Results (right side) -->
+    <section class="results">
+
+      <div class="results-top">
+        <div>
+          <h1 id="title" data-fixed="yes">Cats</h1>
+          <p><span id="count">6</span> pets found</p>
+        </div>
+
+        <select id="sort">
+          <option value="price-low">Sort: Price low to high</option>
+          <option value="price-high">Sort: Price high to low</option>
+          <option value="name">Sort: Name A to Z</option>
+        </select>
+      </div>
+
+      <div class="grid" id="grid">
+
+        <div class="card" data-name="Misty" data-price="18000" data-category="Cats" data-age="young">
+          <div class="card-image cream">
+            <img src="PawNest_Assets/mascots/cat-grey.svg" alt="Persian cat">
+          </div>
+          <h3>Misty</h3>
+          <p>Persian cat · 4 mo</p>
+          <div class="card-bottom">
+            <span class="price">Tk 18,000</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Ginger" data-price="9000" data-category="Cats" data-age="young">
+          <div class="card-image mint">
+            <img src="PawNest_Assets/mascots/cat-orange.svg" alt="Tabby cat">
+          </div>
+          <h3>Ginger</h3>
+          <p>Tabby cat · 5 mo</p>
+          <div class="card-bottom">
+            <span class="price">Tk 9,000</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Luna" data-price="15000" data-category="Cats" data-age="young">
+          <div class="card-image blue">
+            <img src="PawNest_Assets/mascots/cat-grey.svg" alt="Siamese cat">
+          </div>
+          <h3>Luna</h3>
+          <p>Siamese · 3 mo</p>
+          <div class="card-bottom">
+            <span class="price">Tk 15,000</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Oreo" data-price="20000" data-category="Cats" data-age="young">
+          <div class="card-image cream">
+            <img src="PawNest_Assets/mascots/cat-grey.svg" alt="British Shorthair">
+          </div>
+          <h3>Oreo</h3>
+          <p>British Shorthair · 4 mo</p>
+          <div class="card-bottom">
+            <span class="price">Tk 20,000</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Tiger" data-price="25000" data-category="Cats" data-age="young">
+          <div class="card-image mint">
+            <img src="PawNest_Assets/mascots/cat-orange.svg" alt="Bengal cat">
+          </div>
+          <h3>Tiger</h3>
+          <p>Bengal · 6 mo</p>
+          <div class="card-bottom">
+            <span class="price">Tk 25,000</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Simba" data-price="12000" data-category="Cats" data-age="young">
+          <div class="card-image blue">
+            <img src="PawNest_Assets/mascots/cat-orange.svg" alt="Tabby cat">
+          </div>
+          <h3>Simba</h3>
+          <p>Tabby cat · 3 mo</p>
+          <div class="card-bottom">
+            <span class="price">Tk 12,000</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Shadow" data-price="12000" data-category="Cats" data-age="adult">
+          <div class="card-image cream">
+            <img src="PawNest_Assets/mascots/cat-grey.svg" alt="Russian Blue">
+          </div>
+          <h3>Shadow</h3>
+          <p>Russian Blue · 2 yr</p>
+          <div class="card-bottom">
+            <span class="price">Tk 12,000</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Mimi" data-price="10000" data-category="Cats" data-age="adult">
+          <div class="card-image mint">
+            <img src="PawNest_Assets/mascots/cat-grey.svg" alt="Persian cat">
+          </div>
+          <h3>Mimi</h3>
+          <p>Persian cat · 3 yr</p>
+          <div class="card-bottom">
+            <span class="price">Tk 10,000</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="card" data-name="Leo" data-price="28000" data-category="Cats" data-age="adult">
+          <div class="card-image blue">
+            <img src="PawNest_Assets/mascots/cat-orange.svg" alt="Maine Coon">
+          </div>
+          <h3>Leo</h3>
+          <p>Maine Coon · 2 yr</p>
+          <div class="card-bottom">
+            <span class="price">Tk 28,000</span>
+            <button class="add-btn">Add</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- page numbers are made by shop.js -->
+      <div class="pagination" id="pagination"></div>
+
+    </section>
+  </main>
+
+</body>
+</html>
