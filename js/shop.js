@@ -1,7 +1,6 @@
-// PawNest - Shop page JavaScript
-// =====================================================
+// PawNest Shop page JavaScript
 
-// ---------- Get the things we need from the HTML ----------
+//  Get the things we need from the HTML
 const searchBox  = document.getElementById('search');
 const cartCount  = document.getElementById('cart-count');
 const minPrice   = document.getElementById('min-price');
@@ -19,7 +18,7 @@ const ageButtons = document.querySelectorAll('.age-btn');
 const addButtons = document.querySelectorAll('.add-btn');
 const cards      = document.querySelectorAll('.card');
 
-// ---------- Variables that remember things ----------
+//  Variables that remember things
 let selectedAge = 'young';
 let cartItems = 0;
 let currentPage = 1;
@@ -27,7 +26,7 @@ let matching = [];          // the cards that pass the filters, in the order sho
 const perPage = 9;          // cards on one page (3 full rows of 3)
 
 
-// ---------- 1. Price sliders ----------
+//  1. Price sliders
 // Shows the price numbers under the sliders
 function showPrices() {
   minText.innerHTML = Number(minPrice.value).toLocaleString();
@@ -56,7 +55,7 @@ minPrice.addEventListener('input', minSliderMoved);
 maxPrice.addEventListener('input', maxSliderMoved);
 
 
-// ---------- 2. Age buttons ----------
+//  2. Age buttons
 for (let i = 0; i < ageButtons.length; i++) {
   ageButtons[i].addEventListener('click', function () {
 
@@ -72,7 +71,7 @@ for (let i = 0; i < ageButtons.length; i++) {
 }
 
 
-// ---------- 3. Filter the cards ----------
+//  3. Filter the cards
 function filterCards() {
   // find the ticked category radio (only Shop and Supplies have them)
   let category = 'All';
@@ -136,7 +135,7 @@ applyBtn.addEventListener('click', filterCards);
 searchBox.addEventListener('input', filterCards);
 
 
-// ---------- 4. Pages (9 cards on each page) ----------
+//  4. Pages (9 cards on each page)
 // Shows only the cards of the current page and builds the page numbers
 function showPage() {
   const start = (currentPage - 1) * perPage;
@@ -171,7 +170,7 @@ function showPage() {
 }
 
 
-// ---------- 5. Sort the cards ----------
+//  5. Sort the cards
 function sortCards() {
   const list = Array.from(cards);   // turn the cards into a normal list
   const choice = sortSelect.value;
@@ -207,7 +206,7 @@ function sortCards() {
 sortSelect.addEventListener('change', sortCards);
 
 
-// ---------- 6. Add to cart ----------
+//  6. Add to cart
 for (let i = 0; i < addButtons.length; i++) {
   addButtons[i].addEventListener('click', function () {
     cartItems++;
@@ -217,7 +216,7 @@ for (let i = 0; i < addButtons.length; i++) {
 }
 
 
-// ---------- 7. Run once when the page opens ----------
+//  7. Run once when the page opens
 showPrices();
 filterCards();
 sortCards();
