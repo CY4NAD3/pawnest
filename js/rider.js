@@ -1,14 +1,13 @@
 // PawNest - Rider page JavaScript (My deliveries)
-// =====================================================
 
-// ---------- Get the things we need from the HTML ----------
+//  Get the things we need from the HTML
 const markButtons    = document.querySelectorAll('.mark-btn');
 const statusTags     = document.querySelectorAll('.delivery-status span');
 const deliveredCount = document.getElementById('delivered-count');
 const pendingCount   = document.getElementById('pending-count');
 
 
-// ---------- Mark one delivery as delivered ----------
+//  Mark one delivery as delivered
 function markDelivered(i) {
   // change the colour tag to "Delivered"
   statusTags[i].innerHTML = 'Delivered';
@@ -24,7 +23,7 @@ function markDelivered(i) {
 }
 
 
-// ---------- Run the function when a button is clicked ----------
+//  Run the function when a button is clicked
 for (let i = 0; i < markButtons.length; i++) {
   markButtons[i].addEventListener('click', function () {
     markDelivered(i);
