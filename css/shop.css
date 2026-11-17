@@ -1,9 +1,7 @@
-/* =====================================================
-   PawNest - Shop page CSS
+/*
+   PawNest shop page CSS
    Colours like var(--teal) come from css/colors.css
-   ===================================================== */
-
-/* ---------- General ---------- */
+*/
 * {
   box-sizing: border-box;
 }
@@ -20,7 +18,7 @@ a {
   color: inherit;
 }
 
-/* ---------- Header ---------- */
+/*  Header  */
 header {
   display: flex;
   justify-content: space-between;
@@ -89,7 +87,7 @@ nav a.active {
   font-weight: bold;
 }
 
-/* ---------- Main layout: filters on the left, results on the right ---------- */
+/*  Main layout: filters on the left, results on the right  */
 main {
   display: grid;
   grid-template-columns: 260px 1fr;
@@ -97,7 +95,7 @@ main {
   padding: 34px 50px;
 }
 
-/* ---------- Filters ---------- */
+/*  Filters  */
 .filters {
   background: var(--card);
   border: 1px solid var(--line);
@@ -160,7 +158,7 @@ main {
   cursor: pointer;
 }
 
-/* ---------- Results top part ---------- */
+/*  Results top part  */
 .results-top {
   display: flex;
   justify-content: space-between;
@@ -185,7 +183,7 @@ main {
   color: var(--text);
 }
 
-/* ---------- Cards ---------- */
+/*  Cards */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -250,7 +248,7 @@ main {
   cursor: pointer;
 }
 
-/* ---------- Page numbers ---------- */
+/* Pagination Page numbers */
 .pagination {
   display: flex;
   gap: 8px;
