@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My deliveries | PawNest Rider</title>
+
+  <link rel="icon" href="PawNest_Assets/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/colors.css">
+  <link rel="stylesheet" href="css/rider.css">
+  <script src="js/rider.js" defer></script>
+</head>
+<body>
+<div class="layout">
+
+  <!-- ===== Sidebar ===== -->
+  <aside class="sidebar">
+    <a href="index.html">
+      <img src="PawNest_Assets/logo/logo-horizontal.svg" alt="PawNest" class="logo">
+    </a>
+    <p class="role">RIDER</p>
+    <a href="rider.html" class="menu active"><span class="icon"></span>My deliveries</a>
+    <a href="rider-delivered.html" class="menu"><span class="icon"></span>Delivered</a>
+    <a href="rider-profile.html" class="menu"><span class="icon"></span>Profile</a>
+  </aside>
+
+  <!-- ===== Right side ===== -->
+  <div class="content">
+
+    <header>
+      <h1>Delivery Rider</h1>
+      <div class="header-right">
+        <a href="login.html" class="logout-btn">Log out</a>
+        <div class="avatar">R</div>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- Three number boxes -->
+      <div class="stats">
+        <div class="stat">
+          <p>Assigned</p>
+          <h2>6</h2>
+        </div>
+        <div class="stat">
+          <p>Delivered today</p>
+          <h2 id="delivered-count">2</h2>
+        </div>
+        <div class="stat">
+          <p>Pending</p>
+          <h2 id="pending-count">4</h2>
+        </div>
+      </div>
+
+      <!-- Today's deliveries -->
+      <div class="box">
+        <h2>Today's deliveries</h2>
+
+        <div class="delivery">
+          <div class="delivery-info">
+            <h3>#1043 · Mirpur 10</h3>
+            <p>Golden Pup</p>
+            <span class="pill live-note">Live pet · handle with care</span>
+          </div>
+          <div class="delivery-status">
+            <span class="pill out">Out for delivery</span>
+          </div>
+          <button class="mark-btn main">Mark delivered</button>
+        </div>
+
+        <div class="delivery">
+          <div class="delivery-info">
+            <h3>#1046 · Dhanmondi</h3>
+            <p>Dog Food 5kg + Toys</p>
+          </div>
+          <div class="delivery-status">
+            <span class="pill picked">Picked up</span>
+          </div>
+          <button class="mark-btn">Mark delivered</button>
+        </div>
+
+        <div class="delivery">
+          <div class="delivery-info">
+            <h3>#1047 · Uttara</h3>
+            <p>Misty (cat)</p>
+            <span class="pill live-note">Live pet · handle with care</span>
+          </div>
+          <div class="delivery-status">
+            <span class="pill assigned">Assigned</span>
+          </div>
+          <button class="mark-btn">Mark delivered</button>
+        </div>
+
+        <div class="delivery">
+          <div class="delivery-info">
+            <h3>#1048 · Banani</h3>
+            <p>Cat Tree</p>
+          </div>
+          <div class="delivery-status">
+            <span class="pill assigned">Assigned</span>
+          </div>
+          <button class="mark-btn">Mark delivered</button>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+</div>
+</body>
+</html>

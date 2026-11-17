@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile | PawNest Rider</title>
+
+  <link rel="icon" href="PawNest_Assets/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/colors.css">
+  <link rel="stylesheet" href="css/rider.css">
+  <script src="js/rider-profile.js" defer></script>
+</head>
+<body>
+<div class="layout">
+
+  <!-- ===== Sidebar ===== -->
+  <aside class="sidebar">
+    <a href="index.html">
+      <img src="PawNest_Assets/logo/logo-horizontal.svg" alt="PawNest" class="logo">
+    </a>
+    <p class="role">RIDER</p>
+    <a href="rider.html" class="menu"><span class="icon"></span>My deliveries</a>
+    <a href="rider-delivered.html" class="menu"><span class="icon"></span>Delivered</a>
+    <a href="rider-profile.html" class="menu active"><span class="icon"></span>Profile</a>
+  </aside>
+
+  <!-- ===== Right side ===== -->
+  <div class="content">
+
+    <header>
+      <h1>Delivery Rider</h1>
+      <div class="header-right">
+        <a href="login.html" class="logout-btn">Log out</a>
+        <div class="avatar">R</div>
+      </div>
+    </header>
+
+    <main>
+
+      <div class="box profile-box">
+
+        <div class="profile-top">
+          <div class="avatar">R</div>
+          <div>
+            <h2>Rider profile</h2>
+            <p>Keep your details up to date</p>
+          </div>
+        </div>
+
+        <form>
+          <label for="full-name">Full name</label>
+          <input type="text" id="full-name" value="Sakib Hasan">
+
+          <label for="phone">Phone</label>
+          <input type="text" id="phone" value="01700000000">
+
+          <label for="email">Email</label>
+          <input type="email" id="email" value="sakib@email.com">
+
+          <label for="area">Delivery area</label>
+          <select id="area">
+            <option>Mirpur</option>
+            <option>Dhanmondi</option>
+            <option>Uttara</option>
+            <option>Banani</option>
+            <option>Gulshan</option>
+          </select>
+
+          <label>Vehicle</label>
+          <label class="choice"><input type="radio" name="vehicle" value="Bike" checked> Bike</label>
+          <label class="choice"><input type="radio" name="vehicle" value="Bicycle"> Bicycle</label>
+
+          <br>
+          <button type="button" id="save-btn">Save profile</button>
+          <span id="save-msg"></span>
+        </form>
+
+      </div>
+
+    </main>
+  </div>
+
+</div>
+</body>
+</html>

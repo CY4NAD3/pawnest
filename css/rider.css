@@ -1,0 +1,341 @@
+/* =====================================================
+   PawNest - Rider pages CSS (My deliveries, Delivered, Profile)
+   Colours like var(--teal) come from css/colors.css
+   ===================================================== */
+
+/* ---------- General ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------- Layout: sidebar on the left, content on the right ---------- */
+.layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  background: var(--card);
+  border-right: 1px solid var(--line);
+  padding-top: 22px;
+}
+
+.sidebar .logo {
+  height: 40px;
+  margin-left: 24px;
+}
+
+.role {
+  margin: 28px 0 14px 30px;
+  font-size: 11px;
+  font-weight: bold;
+  color: var(--muted);
+}
+
+.sidebar .menu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 40px;
+  margin: 0 16px 8px;
+  padding: 0 14px;
+  border-radius: 10px;
+}
+
+/* the small square before each menu name */
+.icon {
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+}
+
+.sidebar .menu.active {
+  background: var(--teal-light);
+  color: var(--teal-dark);
+  font-weight: bold;
+}
+
+.menu.active .icon {
+  background: var(--teal);
+  border-color: var(--teal);
+}
+
+/* ---------- Top bar ---------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+  padding: 0 40px;
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Log out button and the round R next to each other */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logout-btn {
+  padding: 8px 24px;
+  border: 1px solid var(--teal);
+  border-radius: 20px;
+  color: var(--teal-dark);
+  font-weight: bold;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  border-radius: 50%;
+  background: var(--teal);
+  color: white;
+  font-weight: bold;
+}
+
+/* ---------- Main part ---------- */
+main {
+  padding: 32px 40px;
+}
+
+/* three number boxes at the top */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.stat {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px 22px;
+}
+
+.stat p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.stat h2 {
+  margin: 10px 0 0;
+  font-size: 28px;
+}
+
+/* the big white box under the numbers */
+.box {
+  margin-top: 32px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 24px 28px;
+}
+
+.box h2 {
+  margin: 0 0 20px;
+  font-size: 20px;
+}
+
+/* ---------- Small coloured tags ---------- */
+.pill {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 13px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.assigned {
+  background: var(--teal-light);
+  color: var(--teal-dark);
+}
+
+.picked,
+.done {
+  background: var(--teal);
+  color: white;
+}
+
+.out {
+  background: var(--amber-light);
+  color: var(--text);
+}
+
+.live-note {
+  margin-top: 8px;
+  padding: 3px 11px;
+  border-radius: 11px;
+  background: var(--amber-light);
+  color: var(--text);
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* ---------- My deliveries: one row for each delivery ---------- */
+.delivery {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 20px 24px;
+  border-radius: 14px;
+  background: var(--bg);
+}
+
+.delivery-info {
+  flex: 2;
+}
+
+.delivery-info h3 {
+  margin: 0 0 6px;
+  font-size: 17px;
+}
+
+.delivery-info p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.delivery-status {
+  flex: 1;
+}
+
+.mark-btn {
+  width: 180px;
+  height: 40px;
+  border: 1px solid var(--teal);
+  border-radius: 20px;
+  background: var(--card);
+  color: var(--teal-dark);
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.mark-btn.main {
+  background: var(--teal);
+  color: white;
+}
+
+/* ---------- Delivered page: table ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+td {
+  padding: 16px 10px;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+}
+
+/* ---------- Profile page: form ---------- */
+.profile-box {
+  max-width: 560px;
+  margin-top: 0;
+}
+
+.profile-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.profile-top .avatar {
+  width: 64px;
+  height: 64px;
+  line-height: 64px;
+  font-size: 26px;
+}
+
+.profile-top h2 {
+  margin: 0;
+}
+
+.profile-top p {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.profile-box label {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.profile-box input[type="text"],
+.profile-box input[type="email"],
+.profile-box select {
+  width: 100%;
+  height: 46px;
+  margin: 6px 0 20px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--text);
+}
+
+/* the Bike / Bicycle choices sit in one line */
+.profile-box .choice {
+  display: inline-block;
+  margin: 8px 20px 24px 0;
+  font-weight: normal;
+}
+
+.profile-box input[type="radio"] {
+  accent-color: var(--teal);
+}
+
+#save-btn {
+  width: 200px;
+  height: 46px;
+  border: none;
+  border-radius: 23px;
+  background: var(--teal);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#save-msg {
+  margin-left: 16px;
+  color: var(--teal-dark);
+  font-weight: bold;
+}
