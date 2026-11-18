@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart | PawNest</title>
+  <link rel="icon" href="PawNest_Assets/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/colors.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <script src="js/cart.js" defer></script>
+</head>
+<body>
+  <header class="pn-header">
+    <a href="index.html"><img src="PawNest_Assets/logo/logo-horizontal.svg" alt="PawNest" class="logo"></a>
+    <nav>
+      <a href="index.html">Home</a><a href="shop.html">Shop</a>
+      <a href="dogs.html">Dogs</a><a href="cats.html">Cats</a>
+      <a href="supplies.html">Supplies</a><a href="cart.html" class="active">Cart</a>
+    </nav>
+    <div class="header-right"><a class="login-btn" href="login.html">Login</a></div>
+  </header>
+
+  <main class="cart-page">
+    <div class="page-heading">
+      <div><p class="eyebrow">PAWNEST SHOPPING</p><h1>Your Shopping Cart</h1>
+      <p class="muted">Review your selected pets and supplies before checkout.</p></div>
+      <a class="continue-link" href="shop.html">← Continue shopping</a>
+    </div>
+
+    <div class="cart-layout">
+      <section class="cart-panel">
+        <div class="panel-heading"><h2>Cart Items</h2><span id="item-count">0 items</span></div>
+        <div id="cart-items"></div>
+        <div id="empty-cart" class="empty-state" hidden>
+          <div class="empty-icon">🛒</div><h3>Your cart is empty</h3>
+          <p>Looks like you haven't added anything yet.</p><a class="primary-btn" href="shop.html">Explore the shop</a>
+        </div>
+      </section>
+
+      <aside class="summary-panel">
+        <h2>Order Summary</h2>
+        <div class="summary-line"><span>Subtotal</span><strong id="subtotal">Tk 0</strong></div>
+        <div class="summary-line"><span>Delivery fee</span><strong id="delivery">Tk 0</strong></div>
+        <div class="summary-line total"><span>Total</span><strong id="total">Tk 0</strong></div>
+        <p class="delivery-note">Delivery fee is estimated and may vary by location and item type.</p>
+        <button id="checkout-btn" class="primary-btn full-width">Proceed to Checkout</button>
+        <p id="checkout-message" class="message" role="status"></p>
+      </aside>
+    </div>
+  </main>
+  <footer class="pn-footer">© 2026 PawNest. Made with care for pets.</footer>
+</body>
+</html>
