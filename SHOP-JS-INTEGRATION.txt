@@ -1,0 +1,58 @@
+IMPORTANT: Update the existing js/shop.js file so Add buttons store actual products in localStorage.
+
+1) Find the existing section starting with:
+//  6. Add to cart
+
+2) Replace that entire section with:
+
+//  6. Add to cart - persist item details for cart.html
+const CART_KEY = "pawnestCart";
+
+function getSavedCart() {
+  try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; }
+  catch (error) { return []; }
+}
+
+function updateCartBadge() {
+  const cart = getSavedCart();
+  const total = cart.reduce((sum, item) => sum + Number(item.quantity || 0), 0);
+  cartCount.innerHTML = total;
+  cartCount.style.display = total ? "block" : "none";
+}
+
+for (let i = 0; i < addButtons.length; i++) {
+  addButtons[i].addEventListener("click", function () {
+    const card = addButtons[i].closest(".card");
+    const name = card.dataset.name;
+    const price = Number(card.dataset.price);
+    const imageElement = card.querySelector(".card-image img");
+    const image = imageElement ? imageElement.getAttribute("src") : "";
+    const category = card.dataset.category || "Pet shop item";
+
+    const cart = getSavedCart();
+    const existing = cart.find(item => item.id === name);
+
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push({
+        id: name,
+        name: name,
+        price: price,
+        image: image,
+        category: category,
+        quantity: 1
+      });
+    }
+
+    localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    updateCartBadge();
+    addButtons[i].textContent = "Added";
+    setTimeout(() => addButtons[i].textContent = "Add", 700);
+  });
+}
+
+Call updateCartBadge() once after defining the function, so the badge is correct after refresh:
+updateCartBadge();
+
+Keep your existing showPrices(), filterCards(), showPage() and sortCards() functions unchanged.

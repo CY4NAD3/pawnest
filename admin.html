@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | PawNest</title>
+  <link rel="icon" href="PawNest_Assets/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/colors.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <script src="js/admin.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a href="index.html" class="brand"><img src="PawNest_Assets/logo/logo-horizontal.svg" alt="PawNest"></a>
+    <p class="side-label">ADMIN MENU</p>
+    <button class="side-link active" data-view="dashboard">▦ <span>Dashboard</span></button>
+    <button class="side-link" data-view="listings">🐾 <span>Listings</span></button>
+    <button class="side-link" data-view="users">♙ <span>Users</span></button>
+    <button class="side-link" data-view="categories">▤ <span>Categories</span></button>
+    <button class="side-link" data-view="orders">🛍 <span>Orders</span></button>
+    <button class="side-link" data-view="riders">🚚 <span>Rider Assignment</span></button>
+    <a class="back-shop" href="shop.html">← Back to shop</a>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <div><p class="eyebrow">PAWNEST CONTROL CENTER</p><h1 id="page-title">Dashboard Overview</h1></div>
+      <div class="admin-user"><span class="admin-avatar">A</span><span><strong>Administrator</strong><small>Admin panel</small></span></div>
+    </header>
+
+    <section class="view active" id="view-dashboard">
+      <div class="stats-grid">
+        <article class="stat-card"><span>Total Users</span><strong id="stat-users">0</strong><small>Registered customers and sellers</small></article>
+        <article class="stat-card"><span>Pending Listings</span><strong id="stat-pending">0</strong><small>Need admin review</small></article>
+        <article class="stat-card"><span>Total Orders</span><strong id="stat-orders">0</strong><small>Orders in the system</small></article>
+        <article class="stat-card"><span>Revenue</span><strong id="stat-revenue">Tk 0</strong><small>From completed sample orders</small></article>
+      </div>
+      <div class="content-card"><div class="section-head"><div><h2>Recent Orders</h2><p>Latest customer orders</p></div><button class="outline-btn" data-go="orders">View all orders</button></div>
+        <div class="table-wrap"><table><thead><tr><th>Order ID</th><th>Customer</th><th>Date</th><th>Total</th><th>Status</th></tr></thead><tbody id="recent-orders"></tbody></table></div>
+      </div>
+      <div class="content-card"><div class="section-head"><div><h2>Pending Listings</h2><p>Listings waiting for approval</p></div><button class="outline-btn" data-go="listings">Review listings</button></div><div id="pending-preview"></div></div>
+    </section>
+
+    <section class="view" id="view-listings">
+      <div class="content-card"><div class="section-head"><div><h2>Listing Management</h2><p>Approve or reject seller-submitted pets and products</p></div></div>
+      <div class="table-wrap"><table><thead><tr><th>Listing</th><th>Seller</th><th>Category</th><th>Price</th><th>Status</th><th>Action</th></tr></thead><tbody id="listings-table"></tbody></table></div></div>
+    </section>
+
+    <section class="view" id="view-users">
+      <div class="content-card"><div class="section-head"><div><h2>User Management</h2><p>View and manage customer, seller and rider accounts</p></div></div>
+      <div class="table-wrap"><table><thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th><th>Action</th></tr></thead><tbody id="users-table"></tbody></table></div></div>
+    </section>
+
+    <section class="view" id="view-categories">
+      <div class="content-card"><div class="section-head"><div><h2>Category Management</h2><p>Add or remove shop categories</p></div></div>
+      <form id="category-form" class="inline-form"><input id="category-name" type="text" placeholder="Enter category name" required maxlength="35"><button class="primary-btn">Add Category</button></form>
+      <div id="category-list" class="category-list"></div></div>
+    </section>
+
+    <section class="view" id="view-orders">
+      <div class="content-card"><div class="section-head"><div><h2>Order Management</h2><p>Monitor customer orders and update their status</p></div></div>
+      <div class="table-wrap"><table><thead><tr><th>Order ID</th><th>Customer</th><th>Items</th><th>Total</th><th>Status</th><th>Update status</th></tr></thead><tbody id="orders-table"></tbody></table></div></div>
+    </section>
+
+    <section class="view" id="view-riders">
+      <div class="content-card"><div class="section-head"><div><h2>Rider Assignment</h2><p>Assign a delivery rider to each order</p></div></div>
+      <div class="table-wrap"><table><thead><tr><th>Order ID</th><th>Customer</th><th>Delivery Address</th><th>Assigned Rider</th><th>Action</th></tr></thead><tbody id="riders-table"></tbody></table></div></div>
+    </section>
+    <p id="admin-message" class="toast" role="status"></p>
+  </main>
+</body>
+</html>
