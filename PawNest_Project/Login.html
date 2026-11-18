@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <title>PawNest-Login</title>
+        <link rel = "stylesheet" href = "style.css">
+    </head>
+    <body class = "container">
+        <div class = "welcomeSection">
+
+            <div class = "logo">
+                <img src = "PawNest_Assets\logo\logo-horizontal-white.png" alt ="PawNest Logo">
+            </div>
+
+            <div class = "heroDog">
+                <img src = "PawNest_Assets\mascots\hero-dog-and-cat.png" alt = "Dog and Cat">
+            </div>
+            
+            <div class = "welcomeText">
+                <h1>Welcome to the family</h1>
+                <p>Pets, supplies and friendly sellers in one place.</p>
+            </div>
+        </div>
+        
+        <div class ="loginSection">
+            <div class = "loginCard">
+
+                <h1>Log in or sign up</h1>
+                <p class = " subtitle">Choose how you want to use PawNest</p>
+
+                <div class = "userRole">
+
+                    <label class = "roleActive">
+                        <input type="radio" name="role" value="customer" checked>Customer
+                    </label>
+                     <label class = "role">
+                        <input type="radio" name="role" value="seller">Seller
+                    </label>
+                     <label class = "role">
+                        <input type="radio" name="role" value="admin">Admin
+                    </label>
+                     <label class = "role">
+                        <input type="radio" name="role" value="rider">Rider
+                    </label>
+                </div>
+
+                <form action="dashboard.html" method="get">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="email" placeholder="you@email.com"required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="text" id="password" name="password" placeholder="Enter your pasword" required>
+                    </div>
+
+                    <div class="form-row">
+                        <a href="#">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn">Log in </button>
+
+                     <div class="register-section">
+                         <p>
+                             New here?
+                             <a href="register.html">Create an account</a>
+                         </p>
+                     </div>
+                </form>
+            </div>
+        </div>
+
+    </body>
+</html>
