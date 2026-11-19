@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+        <meta charset = "UTF-8">
+        <title>PawNest Seller Dashboard</title>
+        <link rel = "stylesheet" href = "css/sellerDashboard.css">
+</head>
+<body>
+        <div class="container">
+
+            <div class="sidebar">
+                <div class="logo">
+                    <img src="PawNest_Assets/mascots/dog-golden.png" alt="PawNest Logo">
+                    <h2>PawNest</h2>
+                </div>
+
+                <p class="sidebar-title">SELLER</p>
+
+                <nav>
+                    <a href="#" class="nav-link active" data-page="dashboard">
+                        <span class="nav-icon"></span>
+                        Dashboard
+                    </a>
+                    <a href="#" class="nav-link active" data-page="listing">
+                        <span class="nav-icon"></span>
+                        My listings
+                    </a>
+                    <a href="#" class="nav-link" data-page="add">
+                        <span class="nav-icon"></span>
+                        Add listings
+                    </a>
+                    <a href="#" class="nav-link" data-page="orders">
+                        <span class="nav-icon"></span>
+                        Orders
+                    </a>
+                </nav>
+            </div>
+
+            <div class="main-content">
+
+                <div class="topbar">
+                    <h1 id="pageTitle">Seller Dashboard</h1>
+                    <div class="profile">S</div>
+                </div>
+
+                <div class="content">
+
+                    <div class="summary-card">
+
+                        <div class="summary-card">
+                            <p>Active listings</p>
+                            <h2 id="activeCount">12</h2>
+                        </div>
+
+                        <div class="summary-card">
+                            <p>Pending approval</p>
+                            <h2 id="pendingCount">3</h2>
+                        </div>
+
+                        <div class="summary-card">
+                            <p>Sales this month</p>
+                            <h2>TK 84,500</h2>
+                        </div>
+                    </div>
+
+                    <div class="content-card" id="listingsPage">
+                        <div class="section-hrader">
+                            <h2>My listings</h2>
+
+                            <button type="button" class="add-btn" id="addBtn">
+                                + Add listing
+                            </button>
+                        </div>
+
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>PET / PRODUCT</th>
+                                        <th>CATEGORY</th>
+                                        <th>PRICE</th>
+                                        <th>STATUS</th>
+                                        <th>ACTION</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="listingTable">
+                                    <tr>
+                                        <td>
+                                            <div class="product-info">
+                                                <strong>Golden Pup</strong>
+                                            </div>
+                                        </td>
+
+                                        <td>Dogs</td>
+                                        <td>TK 25,000</td>
+
+                                        <td>
+                                            <span class="status approved">
+                                                Approved
+                                            </span>
+                                        </td>
+                                        <td class="actions">
+                                            <button type="button" class="edit-btn">Edit</button>
+                                            <span>.</span>
+                                            <button type="buttpn" class="delete-btn">Delete</button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>Misty</strong></td>
+                                        <td>Cats</td>
+                                        <td>TK 18,000</td>
+
+                                        <td>
+                                            <span class="status approved">
+                                                Approved
+                                            </span>
+                                        </td>
+                                        <td class="actions">
+                                            <button type="button" class="edit-btn">Edit</button>
+                                            <span>.</span>
+                                            <button type="buttpn" class="delete-btn">Delete</button>                                           
+                                        </td>
+                                    </tr>                                  
+
+                                    <tr>
+                                        <td><strong>Dog Food 5kg</strong></td>
+                                        <td>Food</td>
+                                        <td>TK 2,400</td>
+
+                                        <td>
+                                            <span class="status pending">
+                                                Pending
+                                            </span>
+                                        </td>
+                                        <td class="actions">
+                                            <button type="button" class="edit-btn">Edit</button>
+                                            <span>.</span>
+                                            <button type="buttpn" class="delete-btn">Delete</button>                                           
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>Chew Ball Set</strong></td>
+                                        <td>Accessories</td>
+                                        <td>TK 450</td>
+
+                                        <td>
+                                            <span class="status approved">
+                                                Approved
+                                            </span>
+                                        </td>
+                                        <td class="actions">
+                                            <button type="button" class="edit-btn">Edit</button>
+                                            <span>.</span>
+                                            <button type="buttpn" class="delete-btn">Delete</button>                                           
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>Ginger</strong></td>
+                                        <td>Cats</td>
+                                        <td>TK 9,000</td>
+
+                                        <td>
+                                            <span class="status pending">
+                                                Pending
+                                            </span>
+                                        </td>
+                                        <td class="actions">
+                                            <button type="button" class="edit-btn">Edit</button>
+                                            <span>.</span>
+                                            <button type="buttpn" class="delete-btn">Delete</button>                                           
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="content-card other-page" id="dashboardPage">
+                        <h2>Dashboard Overview</h2>
+                        <p>Welcome to your PawNest seller dashboard.</p>
+                        <p>Manage your listings and track your sales</p>
+                    </div>
+
+                    <div class="content-card other-page">
+                        <h2>My Orders</h2>
+                        <p>No orders to display rigth now.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="listingModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modalTitle">Add Listing</h2>
+                    <button type="button" class="close-btn" id="closeModal">
+                        &times;
+                    </button>
+                </div>
+
+                <form id="listingForm" novalidate>
+                    <div class="form-group">
+                        <label for="productName">Pet / Product Name</label>
+                        <input type="text" id="productName" placeholder="Enter name">
+                        <span class="error" id="nameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="catrgory">Category</label>
+                        <select id="catrgory">
+                            <option value="">Select category</option>
+                            <option value="Dogs">Dogs</option>
+                            <option value="Cats">Cats</option>
+                            <option value="Food">Food</option>
+                            <option value="Accessories">Accessories</option>
+                        </select>
+                        <span class="error" id="categoryError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price">Price(TK)</label>
+                        <input type="number" id="price" placeholder="Enter price" min=""1>
+                        <span class="error" id="priceError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <select id="status">
+                            <option value="Approved">Approved</option>
+                            <option value="Pending">Pending</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="save-btn" id="saveBtn">
+                        Save Listing
+                    </button>
+                </form>
+            </div>
+        </div>
+        <script src="js/sellerDashboard.js"></script>
+
+</body>
+</html>    

@@ -1,6 +1,6 @@
 const form = document.getElementById("login_form");
 
-let wrongAttenpts = 0;
+let wrongAttempts = 0;
 let isLocked = false;
 
 form.addEventListener("submit", function(event){
@@ -19,11 +19,11 @@ form.addEventListener("submit", function(event){
     let valid = true;
 
     //Email Validation
-    if(email.Value.trim() === ""){
+    if(email.value.trim() === ""){
         showError(email, "emailError", "Email is required.");
         valid = false;
     }
-    else if(!/^[^\s@]+@[^\s@]+\.[^s@]+$/.test(email.value.trim())){
+    else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())){
         showError(email, "emailError", "Invalid email address.");
         valid = false;
     }
@@ -37,28 +37,28 @@ form.addEventListener("submit", function(event){
         valid = false;
     }
     else if(password.value !=="PawNest123"){
-        wrongAttenpts++;
+        wrongAttempts++;
 
         showError(
             password, "passwordError", 
-            "Wrong Password! Attempt " + wrongAttenpts + " of 3." 
+            "Wrong Password! Attempt " + wrongAttempts + " of 3." 
         );
         valid = false;
-        if(wrongAttenpts >= 3){
+        if(wrongAttempts >= 3){
             isLocked = true;
             document.getElementById("passwordError").innerHTML = "Too many wrong attempts. Password locked for 1 minute.";
             password.disabled = true;
 
             setTimeout(function(){
                 isLocked = false;
-                wrongAttenpts= 0;
+                wrongAttempts= 0;
                 password.disabled = false;
                 document.getElementById("passworderror").innerHTML = "Password unlocked. Try again.";
             }, 60000);
         }
     }
     else {
-        wrongAttenpts = 0;
+        wrongAttempts = 0;
         showSuccess(password);
     }
 
