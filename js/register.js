@@ -13,7 +13,7 @@ form.addEventListener("submit", function(event){
     let valid = true;
 
     //Name Validation
-    if(name.Value.trim() === ""){
+    if(name.value.trim() === ""){
         showError(name, "nameError", "Name is required");
         valid = false;
     }
@@ -30,7 +30,7 @@ form.addEventListener("submit", function(event){
         showError(email, "emailError", "Email is required.");
         valid = false;
     }
-    else if(!/^[^\s@]+@[^\s@]+\.[^s@]+$/.test(email.value.trim())){
+    else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())){
         showError(email, "emailError", "Invalid email address.");
         valid = false;
     }
@@ -40,7 +40,7 @@ form.addEventListener("submit", function(event){
 
     //Password Validation
     if(password.value ===""){
-        showError(password, "passwordfError", "Password is required.");
+        showError(password, "passwordError", "Password is required.");
         valid =false;
     }
     else if(password.value.length <6){
