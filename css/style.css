@@ -1,0 +1,384 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1f2a44;
+    line-height: 1.5;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    min-height: 100vh;
+    display: flex;
+    background: white;
+}
+
+.welcomeSection{
+    width: 48.7%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        #208e7e,
+        #176b69,
+        #1f2a44
+    );
+}
+
+.welcomeSection::before{
+    content: "";
+    position: absolute;
+    width: 370px;
+    height: 370px;
+    background: rgba(255,255,255,0.10);
+    border-radius: 50%;
+    top: -100px;
+    right: -130px;
+}
+
+.welcomeSection::after{
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: rgba(255,255,255,0.10);
+    border-radius: 50%;
+    bottom: -115px;
+    left: -120px;
+}
+
+.logo{
+    position: absolute;
+    top: 45px;
+    left: 45px;
+    z-index: 2;
+}
+
+.logo img{
+    width: 175px;
+    height: auto;
+}
+
+.heroDog{
+    position: relative;
+    z-index: 1;
+    width: 370px;
+    height: 370px;
+    margin-top: 20px;
+}
+
+.heroDog img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.welcomeText{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-top: 85px;
+    color: white;
+}
+
+.welcomeText h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.welcomeText p{
+    font-size: 15px;
+    color: #dceeea;
+}
+
+.loginSection {
+    width: 51.3%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background: #ffffff;
+}
+
+
+.loginCard {
+    width: 100%;
+    max-width: 492px;
+}
+
+.loginCard h1{
+    font-size: 32px;
+    color: #1f2a44;
+    margin-bottom: 10px;
+}
+
+.subtitle{
+    font-size: 14px;
+    color: #718096;
+    margin-bottom: 22px;
+}
+
+
+.userRole {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 40px;
+}
+
+.role{
+    padding: 6px 16px;
+    border-radius: 25px;
+    background: #e0f3ef;
+    color: #159c8d;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.role input{
+    display: none;
+}
+
+
+.role:has(input:checked){
+    background: #29b6a3;
+    color: white;
+}
+
+.form-group{
+    margin-bottom: 22px;
+}
+
+.form-group label{
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    color: #1f2a44;
+    margin-bottom: 6px;
+}
+
+.form-group input {
+    width: 100%;
+    height: 50px;
+    padding: 12px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    background: white;
+    color: #333;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-group input::placeholder {
+    color: #94a3b8;
+}
+
+.form-group input:focus {
+    border-color: #29b6a3;
+}
+
+
+.error{
+    display: block;
+    color: red;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+
+.errorBorder{
+    border-color: red !important;
+}
+
+.successBorder {
+    border-color: green !important;
+}
+
+
+.form-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+.form-row a {
+    color: #159c8d;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.form-row a:hover {
+    text-decoration: underline;
+}
+
+
+.btn{
+    display: block;
+    width: 100%;
+    height: 53px;
+    border: none;
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #29b6a3,
+        #209887
+    );
+
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.btn:hover {
+    background: #178675;
+}
+
+
+.register-section {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 13px;
+    color: #159c8d;
+}
+
+.register-section a {
+    color: #159c8d;
+    font-weight: bold;
+}
+
+.register-section a:hover {
+    text-decoration: underline;
+}
+
+
+.form-group textarea{
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    background: white;
+    color: #333;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    resize: vertical;
+    outline: none;
+}
+
+.form-group textarea:focus{
+    border-color: #29b6a3;
+}
+
+.options{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.options label{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.options input{
+    accent-color: #29b6a3;
+}
+
+@media (max-width: 768px){
+    .container {
+        flex-direction: column;
+    }
+
+    .welcomeSection{
+        width: 100%;
+        min-height: 380px;
+    }
+
+    .logo{
+        top: 20px;
+        left: 25px;
+    }
+
+    .logo img {
+        width: 145px;
+    }
+
+    .heroDog {
+        width: 200px;
+        height: 200px;
+        margin-top: 45px;
+    }
+
+    .welcomeText{
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .wecomeText h1 {
+        font-size: 23px;
+    }
+
+    .welcomeText p {
+        font-size: 12px;
+    }
+
+    .loginSection{
+        width: 100%;
+        min-height: 550px;
+        padding: 35px 25px;
+    }
+
+    .loginCard h1 {
+        font-size: 27px;
+    }
+
+    .userRole {
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+
+    .role{
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 400px){
+    .userRole{
+        gap: 7px;
+    }
+
+    .role {
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+
+    .loginSection{
+        padding: 25px 18px;
+    }
+}

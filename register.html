@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <title>PawNest-Login</title>
+        <link rel = "stylesheet" href = "style.css">
+    </head>
+    <body class = "container">
+        <div class = "welcomeSection">
+
+            <div class = "logo">
+                <img src = "PawNest_Assets\logo\logo-horizontal-white.png" alt ="PawNest Logo">
+            </div>
+
+            <div class = "heroDog">
+                <img src = "PawNest_Assets\mascots\hero-dog-and-cat.png" alt = "Dog and Cat">
+            </div>
+            
+            <div class = "welcomeText">
+                <h1>Join the PawNest family</h1>
+                <p>Create an account and start your journey with us.</p>
+            </div>
+        </div>
+        
+        <div class ="loginSection">
+            <div class = "loginCard">
+
+                <h1>Create an account</h1>
+                <p class = " subtitle">Fill in your details to join PawNest</p>
+                <form id="registerForm" novalidate>
+
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Enter your full name">
+                        <span class="error" id="nameError"></span>
+                    </div>                      
+
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="email" placeholder="you@email.com"required>
+                        <span class ="error" id="emailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Create a pasword" required>
+                        <span class="error" id="passwordError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password">
+                        <span class="error" id="confirmPasswordError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <div class="options">
+                            <label>
+                                <input type="radio" name="gender" value="Male">Male
+                            </label>
+                            <label>
+                                <input type="radio" name="gender" value="Female">Female
+                            </label>
+                            <label>
+                                <input type="radio" name="gender" value="Other">Other
+                            </label>
+                        </div>
+
+                        <span class="error" id="genderError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <textarea id="address" name="address" rows="3" placeholder="Enter your address"></textarea>
+                        <span class="error" id="addressError"></span>
+                    </div>
+
+                    <button type="submit" class="btn">Create Account</button>
+
+                    <div class="register-section">
+                        <p>
+                            Already have an account?
+                            <a href="Login.html">Log in</a>
+                        </p>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <script src="register.js"></script>
+    </body>
+</html>                

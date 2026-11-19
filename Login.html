@@ -30,7 +30,7 @@
 
                 <div class = "userRole">
 
-                    <label class = "roleActive">
+                    <label class = "role">
                         <input type="radio" name="role" value="customer" checked>Customer
                     </label>
                      <label class = "role">
@@ -44,15 +44,20 @@
                     </label>
                 </div>
 
-                <form action="dashboard.html" method="get">
+                <span class ="error" id="roleError"></span>
+
+
+                <form action="dashboard.html" method="get" id="login_form"  novalidate>
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="text" id="email" name="email" placeholder="you@email.com"required>
+                        <span class ="error" id="emailError"></span>
                     </div>
 
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="text" id="password" name="password" placeholder="Enter your pasword" required>
+                        <input type="password" id="password" name="password" placeholder="Enter your pasword" required>
+                        <span class="error" id="passwordError"></span>
                     </div>
 
                     <div class="form-row">
@@ -70,6 +75,8 @@
                 </form>
             </div>
         </div>
+        
+        <script src="login.js"></script>
 
     </body>
 </html>
