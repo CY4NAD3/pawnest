@@ -3,7 +3,7 @@
 <head>
         <meta charset = "UTF-8">
         <title>PawNest Seller Dashboard</title>
-        <link rel = "stylesheet" href = "css/sellerDashboard.css">
+        <link rel = "stylesheet" href = "css\sellerDashboard.css">
 </head>
 <body>
         <div class="container">
@@ -17,11 +17,11 @@
                 <p class="sidebar-title">SELLER</p>
 
                 <nav>
-                    <a href="#" class="nav-link active" data-page="dashboard">
+                    <a href="#" class="nav-link" data-page="dashboard">
                         <span class="nav-icon"></span>
                         Dashboard
                     </a>
-                    <a href="#" class="nav-link active" data-page="listing">
+                    <a href="#" class="nav-link active" data-page="listings">
                         <span class="nav-icon"></span>
                         My listings
                     </a>
@@ -45,7 +45,7 @@
 
                 <div class="content">
 
-                    <div class="summary-card">
+                    <div class="summary-cards">
 
                         <div class="summary-card">
                             <p>Active listings</p>
@@ -64,7 +64,7 @@
                     </div>
 
                     <div class="content-card" id="listingsPage">
-                        <div class="section-hrader">
+                        <div class="section-header">
                             <h2>My listings</h2>
 
                             <button type="button" class="add-btn" id="addBtn">
@@ -103,7 +103,7 @@
                                         <td class="actions">
                                             <button type="button" class="edit-btn">Edit</button>
                                             <span>.</span>
-                                            <button type="buttpn" class="delete-btn">Delete</button>
+                                            <button type="button" class="delete-btn">Delete</button>
                                         </td>
                                     </tr>
 
@@ -120,7 +120,7 @@
                                         <td class="actions">
                                             <button type="button" class="edit-btn">Edit</button>
                                             <span>.</span>
-                                            <button type="buttpn" class="delete-btn">Delete</button>                                           
+                                            <button type="button" class="delete-btn">Delete</button>                                           
                                         </td>
                                     </tr>                                  
 
@@ -137,7 +137,7 @@
                                         <td class="actions">
                                             <button type="button" class="edit-btn">Edit</button>
                                             <span>.</span>
-                                            <button type="buttpn" class="delete-btn">Delete</button>                                           
+                                            <button type="button" class="delete-btn">Delete</button>                                           
                                         </td>
                                     </tr>
 
@@ -154,7 +154,7 @@
                                         <td class="actions">
                                             <button type="button" class="edit-btn">Edit</button>
                                             <span>.</span>
-                                            <button type="buttpn" class="delete-btn">Delete</button>                                           
+                                            <button type="button" class="delete-btn">Delete</button>                                           
                                         </td>
                                     </tr>
 
@@ -171,7 +171,7 @@
                                         <td class="actions">
                                             <button type="button" class="edit-btn">Edit</button>
                                             <span>.</span>
-                                            <button type="buttpn" class="delete-btn">Delete</button>                                           
+                                            <button type="button" class="delete-btn">Delete</button>                                           
                                         </td>
                                     </tr>
                                 </tbody>
@@ -185,7 +185,7 @@
                         <p>Manage your listings and track your sales</p>
                     </div>
 
-                    <div class="content-card other-page">
+                    <div class="content-card other-page" id="ordersPage">
                         <h2>My Orders</h2>
                         <p>No orders to display rigth now.</p>
                     </div>
@@ -210,8 +210,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="catrgory">Category</label>
-                        <select id="catrgory">
+                        <label for="category">Category</label>
+                        <select id="category">
                             <option value="">Select category</option>
                             <option value="Dogs">Dogs</option>
                             <option value="Cats">Cats</option>
@@ -241,7 +241,7 @@
                 </form>
             </div>
         </div>
-        <script src="js/sellerDashboard.js"></script>
+        <script src="js\sellerDashboard.js"></script>
 
 </body>
 </html>    
