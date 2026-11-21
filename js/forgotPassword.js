@@ -40,3 +40,43 @@ form.addEventListener("submit", function(event){
     
 });
 
+showPassword.addEventListener("change", function(){
+    if(showPassword.checked){
+        newPassword.type = "text";
+        confirmPassword.type = "text";
+    }
+    else{
+        newPassword.type = "password";
+        confirmPassword.type = "password";
+    }
+});
+
+function showError(input, errorId, message){
+    input.classList.add("errorBorder");
+    input.classList.remove("successBorder");
+
+    document.getElementById(errorId).innerHTML = message;
+}
+
+function showSuccess(input){
+    input.classList.remove("errorBorder");
+    input.classList.add("successBorder");
+}
+
+
+function clearErrors() {
+    let errors = document.querySelectorAll(".error");
+
+    errors.forEach(function(item) {
+        item.innerHTML = "";
+    });
+
+    let fields = document.querySelectorAll("input");
+
+    fields.forEach(function(field) {
+        field.classList.remove("errorBorder");
+        field.classList.remove("successBorder");
+    });
+
+}
+
