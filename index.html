@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PawNest - Home</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">🐶 PawNest</div>
+
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">Dogs</a>
+      <a href="#">Cats</a>
+      <a href="#">Supplies</a>
+    </div>
+
+    <div class="nav-right">
+      <input type="text" id="searchBox" placeholder="Search pets and supplies">
+      <button id="searchBtn" class="small-btn">Search</button>
+      <div class="cart">🛒 <span id="cartCount">0</span></div>
+      <a href="#" class="login-btn">Login</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Find your new<br><span>best friend</span></h1>
+      <p>Adorable pets and everything they need, delivered or ready for pickup.</p>
+
+      <div class="hero-buttons">
+        <a href="#" class="btn-main">Shop pets</a>
+        <a href="#" class="btn-outline">Browse supplies</a>
+      </div>
+
+      <div class="tags">
+        <span>Verified sellers</span>
+        <span>Local delivery</span>
+        <span>Cash on delivery</span>
+      </div>
+    </div>
+
+    <div class="hero-image">🐶🐱</div>
+  </section>
+
+  <section class="categories">
+    <a href="#" class="category-box">🐶 Dogs</a>
+    <a href="#" class="category-box">🐱 Cats</a>
+    <a href="#" class="category-box">🍖 Food</a>
+    <a href="#" class="category-box">🎾 Accessories</a>
+  </section>
+
+  <section class="featured">
+    <div class="featured-title">
+      <h2>Featured pets</h2>
+      <a href="#">See all →</a>
+    </div>
+
+    <div class="pet-list" id="petList"></div>
+  </section>
+
+  <script src="JS/script.js"></script>
+</body>
+</html>
