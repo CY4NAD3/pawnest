@@ -382,3 +382,89 @@ a{
         padding: 25px 18px;
     }
 }
+
+/* Forgot password css part */
+
+#successMessage, #resetSuccess {
+    color: #159c8d;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.options{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.options label{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.options input{
+    accent-color: #29b6a3;
+}
+
+#forgotPasswordForm .btn{
+    margin-top: 10px;
+}
+
+#forgotPasswordForm .register-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#forgotPasswordForm input:focus{
+    border-color: #29b6a3;
+}
+
+.error{
+    display: block;
+    color: red;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.errorBorder{
+    border-color: red !important;
+}
+
+.successBorder{
+    border-color: green !important;
+}
+
+@media(max-width: 768px){
+    .container{
+        flex-direction: column;
+    }
+
+    .welcomeSection{
+        width: 100%;
+        min-height: 380px;
+    }
+
+    .loginSection{
+        width: 100%;
+        min-height: 550px;
+        padding: 35px 25px;
+    }
+
+    .loginCard h1{
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 400px){
+    .loginSection{
+        padding: 25px 18px;
+    }
+}

@@ -222,6 +222,16 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="animalImage">Pet / Product Picture</label>
+                        <input type="file" id="animalImage" accept="image/*">
+                        <span class="error" id="imageError"></span>
+
+                        <div class="image-preview" id="imagePreview">
+                            <img id="previewImage" src="" alt="Animal Preview">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <label for="price">Price(TK)</label>
                         <input type="number" id="price" placeholder="Enter price" min=""1>
                         <span class="error" id="priceError"></span>

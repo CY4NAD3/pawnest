@@ -23,6 +23,11 @@ const modalTitle = document.getElementById("modalTitle");
 const activeCount = document.getElementById("activeCount");
 const pendingCount = document.getElementById("pendingCount");
 
+const animalImage = document.getElementById("animalImage");
+const imagePreview = document.getElementById("imagePreview");
+const previewImage = document.getElementById("previewImage");
+
+
 let currentRow = null;
 
 navLinks.forEach(function(link){
@@ -153,6 +158,20 @@ listingForm.addEventListener("submit", function(event){
         listingForm.reset();
         clearErrors();
         currentRow = null;
+    }
+});
+
+animalImage.addEventListener("change", function(){
+    const file = animalImage.files[0];
+    if(file){
+        const reader = new FileReader();
+
+        reader.onload = function(event){
+            previewImage.src = event.target.result;
+            imagePreview.style.display= "block";
+        };
+
+        reader.readAsDataURL(file);
     }
 });
 
