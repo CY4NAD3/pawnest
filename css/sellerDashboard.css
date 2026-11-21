@@ -399,6 +399,29 @@ tbody td strong {
     background-color: #179685;
 }
 
+#animalImage{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.image-preview{
+    margin-top: 10px;
+    display: none;
+}
+
+.image-preview img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+}
+
 
 @media screen and (max-width: 1000px) {
 
@@ -450,3 +473,4 @@ tbody td strong {
     }
 
 }
+
