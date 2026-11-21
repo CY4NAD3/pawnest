@@ -76,13 +76,13 @@ form.addEventListener("submit", function(event){
             window.location.href = "sellerDashboard.html";
         }
         else if(selectedRole ==="customer"){
-            window.location.href = "customerDashboard.html";
+            window.location.href = "index.html";
         }
         else if(selectedRole ==="admin"){
-            window.location.href = "adminDashboard.html";
+            window.location.href = "admin.html";
         }
         else if(selectedRole ==="rider"){
-            window.location.href = "riderDashboard.html";
+            window.location.href = "rider.html";
         }
         
     }
